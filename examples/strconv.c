@@ -155,17 +155,31 @@ long btoi(char s[])
 
 int main(void)
 {
-    char dec1[] = "12";
-    char dec2[] = "-0012";
-    char hex1[] = "91x";
-    char hex2[] = "-0x91";
-    char bin1[] = "1010";
-    char bin2[] = "-0b1010313432";
+    char texts[10][100] = {
+        "foo",
+        "  -2024.5",
+        "   -111 234",
+        "0b111",
+        " -0b1011",
+        "0o777",
+        "777",
+        "0x1a",
+        "  0xdead",
+        "-0x11",
+    };
 
-    printf("result dec1: %ld\n", atoi(dec1));
-    printf("result dec2: %ld\n", atoi(dec2));
-    printf("result hex1: %ld\n", htoi(hex1));
-    printf("result hex2: %ld\n", htoi(hex2));
-    printf("result bin1: %ld\n", btoi(bin1));
-    printf("result bin2: %ld\n", btoi(bin2));
+    for (int i = 0; i < 10; i++) {
+        int result = 0;
+
+        result = atoi(texts[i]);
+        printf("%8s%24s%16d\n", "atoi", texts[i], result);
+
+        result = btoi(texts[i]);
+        printf("%8s%24s%16d\n", "atoi", texts[i], result);
+
+        result = htoi(texts[i]);
+        printf("%8s%24s%16d\n", "atoi", texts[i], result);
+
+        printf("======================================\n");
+    }
 }

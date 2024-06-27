@@ -202,16 +202,16 @@ int main(void)
         int result = 0;
 
         result = atoi(texts[i]);
-        printf("atoi(\"%s\") = %8d\n", texts[i], result);
+        printf("%8s%24s%16d\n", "atoi", texts[i], result);
 
         result = btoi(texts[i]);
-        printf("btoi(\"%s\") = %8d\n", texts[i], result);
+        printf("%8s%24s%16d\n", "atoi", texts[i], result);
 
         result = otoi(texts[i]);
-        printf("otoi(\"%s\") = %8d\n", texts[i], result);
+        printf("%8s%24s%16d\n", "atoi", texts[i], result);
 
         result = htoi(texts[i]);
-        printf("htoi(\"%s\") = %8d\n", texts[i], result);
+        printf("%8s%24s%16d\n", "atoi", texts[i], result);
 
         printf("======================================\n");
     }
